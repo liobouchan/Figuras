@@ -24,17 +24,7 @@ int figura1(figura* f){
   }
   return OK;
 }
-/*
-Pinta un triangulo de tamaño fijo
-***
-**
-*
-Recibe:
-  Figura en la que se pintará el triángulo
-Regresa:
-  Código de error en caso de recibir apuntador nulo.
-  OK en otro caso.
-*/
+
 int figura2(figura* f){
   int i,j;
   if(!ES_VAL(f))
@@ -48,17 +38,7 @@ int figura2(figura* f){
   }
   return OK;
 }
-/*
-Pinta un triangulo de tamaño fijo
-***
-**
-*
-Recibe:
-  Figura en la que se pintará el triángulo
-Regresa:
-  Código de error en caso de recibir apuntador nulo.
-  OK en otro caso.
-*/
+
 int figura3(figura* f){
   int i,j;
   if(!ES_VAL(f))
@@ -75,18 +55,7 @@ int figura3(figura* f){
   }
   return OK;
 }
-/*
-Pinta un triangulo de tamaño fijo
-   *
-  **
- ***
-****
-Recibe:
-  Figura en la que se pintará el triángulo
-Regresa:
-  Código de error en caso de recibir apuntador nulo.
-  OK en otro caso.
-*/
+
 int figura4(figura* f){
   int i,j;
   if(!ES_VAL(f))

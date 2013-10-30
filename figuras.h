@@ -68,6 +68,6 @@ int figura3(figura*);
  ***
 ****
 */
-int figura3(figura*);
+int figura4(figura*);
 
 #endif
