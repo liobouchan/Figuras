@@ -5,6 +5,7 @@ int main(){
   int i;
   figura f;
   char s[100];
+  char w[100];
 
   //Aqui vamos imprimiendo las figuras
   for(i=0;i<2;i++){
@@ -36,10 +37,23 @@ int main(){
   }
 
   for(i=0;i<2;i++){
-	crea_fig(&f,i*7,i*8);
+
+	crea_fig(&f,i*4,i*5);
 	figura9(&f);
 	printf("%s\n","Figura 9");
 	printf("%s\n",fig_tostr(s,&f));
+  }
+
+  for(i=0;i<2;i++){
+
+	crea_fig(&f,i*4,i*5);
+	crea_fig(&f,i*4,i*5);
+	figura10(&f);
+	printf("%s\n","Figura 10");
+	printf("%s\n",fig_tostr(s,&f));
+/*	figura9(&f);
+	printf("%s\n",fig_tostr(w,&f));*/
+
   }
 
   return 0;

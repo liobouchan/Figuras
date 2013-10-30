@@ -1,3 +1,4 @@
+
 #include "figuras.h"
 
 /*
@@ -11,6 +12,21 @@ Regresa:
   Código de error en caso de recibir apuntador nulo.
   OK en otro caso.
 */
+/*int rectangulos(figura* f){
+  int i,j;
+  if (!ES_VAL(f))
+    return AP_INV;
+
+  strcpy(f->sal,"");
+  for(i=0;i<f->alt;i++){
+    for(j=0;j<f->anc;j++){
+      strcat(f->sal,"*"); 
+    }
+    strcat(f->sal);
+  }
+  return OK;
+}*/
+
 int figura1(figura* f){
   int i,j;
   if(!ES_VAL(f))
@@ -54,7 +70,7 @@ int figura3(figura* f){
 	strcat(f->sal,"\n");
   }
   return OK;
-}
+} 
 
 int figura4(figura* f){
   int i,j;
@@ -77,7 +93,7 @@ int figura9(figura* f){
   int i,j;
   if(!ES_VAL(f))
     return AP_INV;
-  
+
   strcpy(f->sal,"");
   for(i=0;i<f->alt;i++){
     for(j=0;j<i;j++)
@@ -90,8 +106,40 @@ int figura9(figura* f){
     strcat(f->sal,"*");
   strcat(f->sal,"\n");
   }
-  
+
   return OK;  
+}
+
+int figura10(figura* f){
+    int i,j;
+  if(!ES_VAL(f))
+    return AP_INV;
+
+  strcpy(f->sal,"");
+
+  for(i=0;i<f->alt;i++){
+    for(j=0;j<f->anc;j++)
+     if(i==0||j<f->anc-i)
+       strcat(f->sal," ");
+      else
+      strcat(f->sal,"*");
+    for(j=0;j<i;j++)
+      strcat(f->sal,"*");
+  strcat(f->sal,"\n");
+  }
+
+  for(i=0;i<f->alt;i++){
+    for(j=0;j<f->anc;j++)
+     if(i==0||(i<j)||i==j)
+       strcat(f->sal,"*");
+     else
+      strcat(f->sal," ");
+    for(j=i+1;j<f->alt;j++)
+      strcat(f->sal,"*");
+  strcat(f->sal,"\n");
+  }
+
+  return OK; 
 }
 
 /*
