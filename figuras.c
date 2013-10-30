@@ -73,6 +73,27 @@ int figura4(figura* f){
   return OK;
 }
 
+int figura9(figura* f){
+  int i,j;
+  if(!ES_VAL(f))
+    return AP_INV;
+  
+  strcpy(f->sal,"");
+  for(i=0;i<f->alt;i++){
+    for(j=0;j<i;j++)
+    strcat(f->sal,"*");
+  strcat(f->sal,"\n");
+  }
+
+  for(i=0;i<f->alt;i++){
+    for(j=i+1;j<f->alt;j++)
+    strcat(f->sal,"*");
+  strcat(f->sal,"\n");
+  }
+  
+  return OK;  
+}
+
 /*
 Inicializa una figura, para especificar el tamaño necesario
 Recibe:

@@ -35,5 +35,12 @@ int main(){
 	printf("%s\n",fig_tostr(s,&f));
   }
 
+  for(i=0;i<2;i++){
+	crea_fig(&f,i*7,i*8);
+	figura9(&f);
+	printf("%s\n","Figura 9");
+	printf("%s\n",fig_tostr(s,&f));
+  }
+
   return 0;
 }

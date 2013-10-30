@@ -70,4 +70,6 @@ int figura3(figura*);
 */
 int figura4(figura*);
 
+int figura9(figura*);
+
 #endif
