@@ -47,12 +47,19 @@ int main(){
   for(i=0;i<2;i++){
 
 	crea_fig(&f,i*4,i*5);
-	crea_fig(&f,i*4,i*5);
 	figura10(&f);
 	printf("%s\n","Figura 10");
 	printf("%s\n",fig_tostr(s,&f));
-
   }
+
+  for(i=0;i<2;i++){
+
+	crea_fig(&f,i*8,i*12);
+	figura15(&f);
+	//printf("Figura 15");
+	printf("%s\n",fig_tostr(s,&f));
+  }
+
 
   return 0;
 }

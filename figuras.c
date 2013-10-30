@@ -111,7 +111,7 @@ int figura9(figura* f){
 }
 
 int figura10(figura* f){
-    int i,j;
+  int i,j;
   if(!ES_VAL(f))
     return AP_INV;
 
@@ -121,11 +121,11 @@ int figura10(figura* f){
     for(j=0;j<f->anc;j++)
      if(i==0||j<f->anc-i)
        strcat(f->sal," ");
-      else
-      strcat(f->sal,"*");
+     else
+       strcat(f->sal,"*");
     for(j=0;j<i;j++)
-      strcat(f->sal,"*");
-  strcat(f->sal,"\n");
+       strcat(f->sal,"*");
+    strcat(f->sal,"\n");
   }
 
   for(i=0;i<f->alt;i++){
@@ -142,11 +142,26 @@ int figura10(figura* f){
   return OK; 
 }
 
+int figura15(figura* f){
+  int i,j;
+  if(!ES_VAL(f))
+    return AP_INV;
+  
+  strcpy(f->sal,"");
+  printf("%s", "*");
+  for(i=0;i<f->alt;i++){  
+    for(j=0;j<=i;j++)
+    strcat(f->sal,"**");
+  strcat(f->sal,"\n");
+  }
+  return OK;
+}
+
 /*
 Inicializa una figura, para especificar el tamaño necesario
 Recibe:
-  Figura a ser inicializada.
-  El ancho y alto de la figura.
+  Figura a ser inicializad
+  =2l ancho y alto de la figura.
 Regresa:
   Código de error en caso de que la figura solicitada sea
   muy grande.

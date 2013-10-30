@@ -2,6 +2,7 @@
 #define FIGURAS_H
 
 #include <stdio.h>
+#include <string.h>
 
 /*Macros*/
 #define ES_VAL(AP)     ((AP)!=NULL)
@@ -73,6 +74,8 @@ int figura4(figura*);
 int figura9(figura*);
 
 int figura10(figura*);
+
+int figura15(figura*);
 
 int rectangulos(figura*);
 
