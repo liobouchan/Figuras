@@ -51,8 +51,6 @@ int main(){
 	figura10(&f);
 	printf("%s\n","Figura 10");
 	printf("%s\n",fig_tostr(s,&f));
-/*	figura9(&f);
-	printf("%s\n",fig_tostr(w,&f));*/
 
   }
 
