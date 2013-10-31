@@ -73,6 +73,8 @@ int figura4(figura*);
 
 int figura9(figura*);
 
+int figura8(figura*);
+
 int figura10(figura*);
 
 int figura11(figura*);

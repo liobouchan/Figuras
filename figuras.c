@@ -89,6 +89,32 @@ int figura4(figura* f){
   return OK;
 }
 
+int figura8(figura* f){
+  int i,j;
+  if(!ES_VAL(f))
+    return AP_INV;
+  
+  strcpy(f->sal,"");
+  for(i=0;i<f->alt;i++){
+    for(j=0;j<f->anc;j++)
+     if(i==0||j<f->anc-i)
+       strcat(f->sal," ");
+      else
+      strcat(f->sal,"*");
+  strcat(f->sal,"\n");
+  }
+  
+  for(i=0;i<f->alt;i++){
+    for(j=0;j<f->anc;j++)
+     if(i==0||(i<j)||i==j)
+       strcat(f->sal,"*");
+      else
+      strcat(f->sal," ");
+  strcat(f->sal,"\n");
+  }
+  return OK;
+}
+
 int figura9(figura* f){
   int i,j;
   if(!ES_VAL(f))
@@ -130,27 +156,18 @@ int figura10(figura* f){
 
   strcpy(f->sal,"");
 
-  for(i=0;i<f->alt;i++){
-    for(j=0;j<f->anc;j++)
-     if(i==0||j<f->anc-i)
-       strcat(f->sal," ");
-     else
-       strcat(f->sal,"*");
-    for(j=0;j<i;j++)
-       strcat(f->sal,"*");
-    strcat(f->sal,"\n");
-  }
-
-  for(i=0;i<f->alt;i++){
-    for(j=0;j<f->anc;j++)
-     if(i==0||(i<j)||i==j)
-       strcat(f->sal,"*");
-     else
-      strcat(f->sal," ");
-    for(j=i+1;j<f->alt;j++)
+  for (i=0;i<=f->alt;i++){
+    for (j=0;j<f->anc;j++)
+      if(i==0)
+        strcat(f->sal,"*");
+      else 
+        strcat(f->sal," ");
+    
+    for(j=0;j<=f->anc-i;j++)
       strcat(f->sal,"*");
   strcat(f->sal,"\n");
   }
+
 
   return OK; 
 }
