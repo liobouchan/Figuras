@@ -95,15 +95,28 @@ int figura9(figura* f){
     return AP_INV;
 
   strcpy(f->sal,"");
-  for(i=0;i<f->alt;i++){
-    for(j=0;j<i;j++)
+  for (i=0;i<=f->alt;i++){
+    for (j=0;j<f->anc;j++)
+      if(i==f->alt)
+        strcat(f->sal,"*");
+      else 
+        strcat(f->sal," ");
+  
+  for(j=0;j<i;j++)
     strcat(f->sal,"*");
+
   strcat(f->sal,"\n");
   }
 
-  for(i=0;i<f->alt;i++){
-    for(j=i+1;j<f->alt;j++)
-    strcat(f->sal,"*");
+  for (i=0;i<=f->alt;i++){
+    for (j=0;j<f->anc;j++)
+      if(i==0)
+        strcat(f->sal,"*");
+      else 
+        strcat(f->sal," ");
+    
+    for(j=0;j<=f->anc-i;j++)
+      strcat(f->sal,"*");
   strcat(f->sal,"\n");
   }
 
@@ -148,7 +161,7 @@ int figura15(figura* f){
     return AP_INV;
   
   strcpy(f->sal,"");
-  printf("%s", "*");
+  printf("%s\n","*");
   for(i=0;i<f->alt;i++){  
     for(j=0;j<=i;j++)
     strcat(f->sal,"**");
@@ -157,6 +170,50 @@ int figura15(figura* f){
   return OK;
 }
 
+int figura11(figura* f){
+  int i,j;
+  strcpy(f->sal,"");
+  /*Parte superior del marco*/  
+  for(i=0;i<f->anc;i++)
+    strcat(f->sal,"*");
+  strcat(f->sal,"\n");
+  /*Centro del marco*/
+  for(j=0;j<f->alt;j++){
+    strcat(f->sal,"*");
+    for(i=0;i<f->anc-2;i++)
+      strcat(f->sal," ");
+    strcat(f->sal,"*\n"); 
+  }
+  /*Parte inferior del marco*/  
+  for(i=0;i<f->anc;i++)
+    strcat(f->sal,"*");
+  strcat(f->sal,"\n");
+  return OK;
+}
+
+int figura13(figura* f){
+  int i,j;
+  strcpy(f->sal,"");
+  /*Parte superior del marco*/  
+  for(i=0;i<=f->anc;i++)
+    if(i==0 || i==f->anc){
+      strcat(f->sal," ");
+    }  
+    strcat(f->sal,"*");
+  strcat(f->sal,"\n");
+
+  for(j=0;j<f->alt;j++){
+    strcat(f->sal,"*");
+    for(i=0;i<f->anc-2;i++)
+      strcat(f->sal," ");
+    strcat(f->sal,"*\n"); 
+  }
+  /*Parte inferior del marco*/  
+  for(i=0;i<f->anc;i++)
+    strcat(f->sal,"*");
+  strcat(f->sal,"\n");
+  return OK;
+}
 /*
 Inicializa una figura, para especificar el tamaño necesario
 Recibe:

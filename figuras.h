@@ -75,9 +75,15 @@ int figura9(figura*);
 
 int figura10(figura*);
 
+int figura11(figura*);
+
+int figura13(figura*);
+
 int figura15(figura*);
 
 int rectangulos(figura*);
+
+int fig_marco1(figura* f);
 
 
 #endif
