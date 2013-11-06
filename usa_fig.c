@@ -84,5 +84,13 @@ int main(){
 	printf("%s\n",fig_tostr(s,&f));
   }
 
+  for(i=0;i<2;i++){
+
+  crea_fig(&f,i*4,i*5);
+  figura18(&f);
+  //printf("Figura 15");
+  printf("%s\n",fig_tostr(s,&f));
+  }
+
   return 0;
 }

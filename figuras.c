@@ -150,11 +150,29 @@ int figura9(figura* f){
 }
 
 int figura10(figura* f){
-  int i,j;
+  int i,j,l,m;
+
   if(!ES_VAL(f))
     return AP_INV;
 
   strcpy(f->sal,"");
+
+
+  for (i=0;i<=f->alt;i++){
+
+    for (j=0;j<f->anc;j++)
+      if(i==f->alt)
+        strcat(f->sal,"*");
+      else if(j<f->anc-j){
+        strcat(f->sal,"+");
+      }else
+        strcat(f->sal," ");
+
+  for(j=0;j<i;j++)
+    strcat(f->sal,"*");
+
+  strcat(f->sal,"\n");
+  }
 
   for (i=0;i<=f->alt;i++){
     for (j=0;j<f->anc;j++)
@@ -166,10 +184,10 @@ int figura10(figura* f){
     for(j=0;j<=f->anc-i;j++)
       strcat(f->sal,"*");
   strcat(f->sal,"\n");
+
   }
 
-
-  return OK; 
+  return OK;  
 }
 
 int figura15(figura* f){
@@ -230,6 +248,24 @@ int figura13(figura* f){
     strcat(f->sal,"*");
   strcat(f->sal,"\n");
   return OK;
+}
+
+int figura18(figura* f){
+  int i,j;
+  strcpy(f->sal,"");
+
+  for(i=0;i<=f->alt;i++){
+    for(j=0;j<=f->anc;j++){
+      if(i==f->alt || j==f->anc){
+        strcat(f->sal,"*");
+      }else{
+        strcat(f->sal,"-");
+      }
+      
+    }
+
+  }
+
 }
 /*
 Inicializa una figura, para especificar el tamaño necesario
